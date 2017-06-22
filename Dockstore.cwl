@@ -14,6 +14,11 @@ requirements:
   - class: DockerRequirement
     dockerPull: "quay.io/standage/megahit:latest"
 
+hints:
+  - class: ResourceRequirement
+    coresMin: 4
+    ramMin: 2048
+
 inputs:
   intfasta:
     type: File
@@ -21,14 +26,19 @@ inputs:
     inputBinding:
       position: 1
       prefix: --12
+  threads:
+    type: int
+    doc: "Number of threads"
+    inputBinding:
+      position: 2
+      prefix: --num-cpu-threads
 
 outputs:
   megahit-out:
-    type: Directory
+    type: File
     doc: "Assembly output"
     outputBinding:
       glob: megahit-out
       prefix: -o
 
 baseCommand: ["megahit"]
-stdout: output.txt
