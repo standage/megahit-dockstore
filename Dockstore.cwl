@@ -34,11 +34,10 @@ inputs:
       prefix: --num-cpu-threads
 
 outputs:
-  megahit-out:
+  megahit_out:
     type: File
     doc: "Assembly output"
     outputBinding:
-      glob: megahit-out
-      prefix: -o
+      glob: megahit_out
 
 baseCommand: ["megahit"]
