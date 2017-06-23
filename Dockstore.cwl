@@ -35,7 +35,7 @@ inputs:
 
 outputs:
   megahit_out:
-    type: File
+    type: Directory
     doc: "Assembly output"
     outputBinding:
       glob: megahit_out
