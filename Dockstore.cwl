@@ -34,10 +34,9 @@ inputs:
       prefix: --num-cpu-threads
 
 outputs:
-  megahit_out:
-    type: Directory
-    doc: "Assembly output"
+  contigs:
+    type: File
     outputBinding:
-      glob: megahit_out
+      megahit_out/final.contigs.fa
 
 baseCommand: ["megahit"]
